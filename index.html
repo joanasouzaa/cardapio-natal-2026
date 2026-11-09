@@ -1,0 +1,661 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Especial de Natal · Querido Brownie</title>
+<meta name="description" content="Cardápio especial de Natal 2026 do Querido Brownie. Monte sua encomenda e confirme pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --deep:#4a0d14; --gold:#e3c270; --gold2:#f4e2a6;
+  --cream:#fbf1d9; --muted:#e6cfa6; --radius:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+[hidden]{display:none !important}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:'Poppins',Arial,sans-serif; color:var(--cream); min-height:100vh;
+  background:radial-gradient(ellipse at 50% -5%,#8c202a 0%,#6a131b 42%,#4a0d14 100%) fixed;
+  padding-bottom:100px; overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+button{font-family:inherit}
+
+/* HERO */
+.hero{position:relative;text-align:center;padding:34px 16px 24px}
+.hero::before{content:"";position:absolute;inset:12px;border:1.5px solid rgba(227,194,112,.65);border-radius:6px;pointer-events:none}
+.kicker{font-size:12px;letter-spacing:5px;text-transform:uppercase;color:var(--gold)}
+.title{font-family:'Playfair Display',Georgia,serif;font-weight:500;line-height:.95;margin-top:12px}
+.title .esp{display:block;font-size:26px;letter-spacing:7px;color:var(--gold2);text-transform:uppercase}
+.title .nat{display:block;font-style:italic;font-size:88px;color:var(--gold2)}
+.tag{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:21px;color:var(--gold);margin-top:6px}
+.meta{font-size:13px;color:var(--muted);margin-top:14px}
+.notice{display:inline-block;margin-top:14px;padding:8px 16px;border:1px solid var(--gold);border-radius:999px;font-size:13px;background:rgba(0,0,0,.2)}
+
+/* CATEGORY TABS (3 colunas, sem rolagem lateral) */
+.tabs{position:sticky;top:0;z-index:20;background:rgba(74,13,20,.94);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid rgba(227,194,112,.35);padding:12px 0}
+.tabs .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.tab{padding:10px 6px;border:1px solid var(--gold);border-radius:999px;background:transparent;color:var(--cream);font:600 13px 'Poppins',Arial,sans-serif;line-height:1.2;text-align:center;cursor:pointer}
+.tab[aria-selected="true"]{background:var(--gold);color:var(--deep)}
+.tab:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,.opt:focus-within span{outline:2px solid var(--gold2);outline-offset:2px}
+
+/* CATALOG */
+.sec-head{margin:24px 0 16px;text-align:center}
+.sec-head h2{font-family:'Playfair Display',Georgia,serif;font-weight:500;font-size:32px;color:var(--gold2)}
+.sec-head p{font-size:14px;color:var(--muted);margin-top:4px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.card{background:rgba(90,17,25,.6);border:1px solid rgba(227,194,112,.45);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:border-color .2s,box-shadow .2s}
+.card.on{border-color:var(--gold);box-shadow:0 0 0 2px rgba(227,194,112,.35)}
+.card .thumb{aspect-ratio:4/5;background:#3a0a10}
+.card .thumb img{width:100%;height:100%;object-fit:cover}
+.info{padding:12px 12px 14px;display:flex;flex-direction:column;gap:6px;flex:1}
+.info h3{font-family:'Playfair Display',Georgia,serif;font-weight:600;font-size:17px;line-height:1.2;color:var(--gold2)}
+.info p{font-size:12.5px;color:var(--muted);line-height:1.4}
+.buy{margin-top:auto;padding-top:8px;display:flex;flex-direction:column;gap:8px}
+.price{font-weight:700;color:var(--gold);font-size:16px}
+.stepper{display:flex;align-items:center;justify-content:space-between;gap:6px}
+.stepper button{width:36px;height:36px;border-radius:50%;border:1.5px solid var(--gold);background:transparent;color:var(--gold2);font-size:20px;line-height:1;cursor:pointer;flex:0 0 auto}
+.stepper button:hover{background:rgba(227,194,112,.18)}
+.stepper .qty{min-width:28px;text-align:center;font-weight:700;font-size:17px}
+
+/* PRODUTO EM DESTAQUE (donuts e lata) */
+.feat{display:grid;grid-template-columns:1fr;background:rgba(90,17,25,.6);border:1px solid rgba(227,194,112,.45);border-radius:18px;overflow:hidden;margin-bottom:18px}
+.gal{display:flex;flex-direction:column;min-width:0}
+.gal .main{aspect-ratio:4/5;background:#3a0a10}
+.gal .main img{width:100%;height:100%;object-fit:cover}
+.thumbs{display:flex;gap:8px;padding:10px;background:rgba(0,0,0,.25);justify-content:center}
+.thumbs button{width:76px;height:96px;border-radius:8px;overflow:hidden;border:2px solid transparent;padding:0;cursor:pointer;background:none;opacity:.7}
+.thumbs button[aria-pressed="true"]{border-color:var(--gold);opacity:1}
+.thumbs img{width:100%;height:100%;object-fit:cover}
+.finfo{padding:20px 18px 22px;display:flex;flex-direction:column;gap:12px}
+.finfo h3{font-family:'Playfair Display',Georgia,serif;font-weight:600;font-size:28px;line-height:1.15;color:var(--gold2)}
+.fdesc{font-size:14px;color:var(--muted);line-height:1.5}
+.fprice{font-size:24px;font-weight:700;color:var(--gold)}
+.fprice span{font-size:13px;font-weight:400;color:var(--muted)}
+.lbl{display:block;font-size:13px;color:var(--gold);letter-spacing:.3px}
+fieldset{border:0;display:flex;flex-direction:column;gap:10px;min-width:0}
+legend{padding:0;margin-bottom:8px}
+.opt{position:relative;cursor:pointer;display:block}
+.opt input{position:absolute;opacity:0;pointer-events:none}
+.opt span{display:flex;align-items:center;gap:12px;border:1.5px solid rgba(227,194,112,.5);border-radius:12px;padding:13px 14px;font-weight:600;font-size:15px;background:rgba(0,0,0,.18);transition:background .15s,border-color .15s}
+.opt i{width:18px;height:18px;border-radius:50%;border:2px solid var(--gold);flex:0 0 auto;position:relative}
+.opt em{margin-left:auto;font-style:normal;font-size:12.5px;font-weight:500;color:var(--gold2)}
+.opt input:checked + span{border-color:var(--gold);background:rgba(227,194,112,.16)}
+.opt input:checked + span i{background:var(--gold);box-shadow:inset 0 0 0 3px var(--deep)}
+.buy-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto;padding-top:8px}
+.buy-row .qlbl{font-size:14px;color:var(--muted)}
+.stepper.big button{width:46px;height:46px;font-size:24px}
+.stepper.big .qty{font-size:20px;min-width:36px}
+
+/* BOTTOM BAR */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:30;background:linear-gradient(180deg,#5a1119,#430c12);border-top:1px solid var(--gold);padding:12px 16px;display:none}
+.bar.show{display:block}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px}
+#bar-txt{font-size:14px;font-weight:600}
+
+/* BUTTONS */
+.btn{background:var(--gold);color:var(--deep);border:none;border-radius:999px;padding:13px 22px;font:700 15px 'Poppins',Arial,sans-serif;cursor:pointer;white-space:nowrap}
+.btn:hover:not(:disabled){background:var(--gold2)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+
+/* SHEET (CARRINHO) */
+.overlay{position:fixed;inset:0;z-index:40;background:rgba(30,4,8,.72);display:none;align-items:flex-end;justify-content:center}
+.overlay.show{display:flex}
+.sheet{background:#5a1119;border:1px solid var(--gold);border-radius:18px 18px 0 0;width:100%;max-width:640px;max-height:94vh;overflow-y:auto;padding:22px 18px 28px;position:relative}
+.sheet h2{font-family:'Playfair Display',Georgia,serif;font-weight:500;font-size:28px;color:var(--gold2);padding-right:36px}
+.close{position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:50%;border:1px solid var(--gold);background:transparent;color:var(--gold2);font-size:22px;line-height:1;cursor:pointer}
+.sec-title{font-family:'Playfair Display',Georgia,serif;font-weight:500;font-size:21px;color:var(--gold2);margin:26px 0 4px;padding-top:18px;border-top:1px solid rgba(227,194,112,.3)}
+.line{display:flex;gap:12px;align-items:center;padding:12px 0;border-bottom:1px dashed rgba(227,194,112,.3)}
+.line img{width:54px;height:68px;object-fit:cover;border-radius:8px;flex:0 0 auto}
+.line .lm{flex:1;min-width:0}
+.line .nm{font-weight:600;font-size:14px;line-height:1.3}
+.line .sb{font-size:12.5px;color:var(--gold);margin-top:2px}
+.line .ctl{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.line .ctl .stepper button{width:32px;height:32px;font-size:18px}
+.rm{background:none;border:none;color:var(--muted);font-size:12px;text-decoration:underline;cursor:pointer;padding:2px}
+.totals{margin-top:14px;padding:14px;border-radius:12px;background:rgba(0,0,0,.22);display:flex;justify-content:space-between;align-items:center;font-size:15px}
+.totals strong{font-size:20px;color:var(--gold)}
+.empty{font-size:14px;color:var(--muted);padding:14px 0}
+
+/* FORMULÁRIO */
+label.lbl{margin:16px 0 6px}
+input[type=text],input[type=date],textarea{width:100%;background:rgba(0,0,0,.25);border:1px solid rgba(227,194,112,.5);border-radius:10px;color:var(--cream);padding:12px;font:400 16px 'Poppins',Arial,sans-serif;resize:vertical}
+input[type=date]{color-scheme:dark}
+input::placeholder,textarea::placeholder{color:rgba(230,207,166,.6)}
+.choice{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pick{position:relative;cursor:pointer}
+.pick input{position:absolute;opacity:0;pointer-events:none}
+.pick span{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border:1.5px solid rgba(227,194,112,.5);border-radius:12px;padding:14px 8px;font-weight:600;font-size:15px;text-align:center;background:rgba(0,0,0,.18);min-height:66px}
+.pick small{font-weight:400;font-size:12px;color:var(--muted)}
+.pick:has(input:checked) span{border-color:var(--gold);background:var(--gold);color:var(--deep)}
+.pick:has(input:checked) small{color:var(--deep)}
+.pick:has(input:focus-visible) span{outline:2px solid var(--gold2);outline-offset:2px}
+.help{font-size:12.5px;color:var(--muted);margin-top:6px;line-height:1.45}
+.help.warn{color:#ffd58a}
+.error{display:none;margin-top:16px;padding:11px 13px;border-radius:10px;background:rgba(255,80,80,.14);border:1px solid #ff8a8a;color:#ffd6d6;font-size:14px;line-height:1.4}
+.error.show{display:block}
+.confirm{width:100%;margin-top:16px;padding:16px}
+.fine{font-size:12px;color:var(--muted);text-align:center;margin-top:10px}
+
+footer{text-align:center;font-size:12px;color:var(--muted);padding:26px 16px 8px;line-height:1.6}
+
+/* DESKTOP */
+@media (min-width:760px){
+  .tab{font-size:15px;padding:12px 16px}
+  .sec-head h2{font-size:38px}
+  .grid{grid-template-columns:repeat(4,1fr);gap:18px}
+  .feat{grid-template-columns:1.1fr 1fr}
+  .gal .main{aspect-ratio:auto;flex:1;min-height:620px}
+  .finfo{padding:34px 36px;justify-content:center}
+  .finfo h3{font-size:34px}
+  .fprice{font-size:28px}
+  .sheet{border-radius:18px;max-height:90vh}
+  .overlay{align-items:center}
+  .title .nat{font-size:110px}
+  .title .esp{font-size:30px}
+}
+@media (max-width:359px){
+  .title .nat{font-size:72px}
+  .thumbs button{width:64px;height:80px}
+  .finfo h3{font-size:24px}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="kicker">Cardápio digital · Natal 2026</div>
+  <h1 class="title"><span class="esp">Especial</span><span class="nat">Natal</span></h1>
+  <p class="tag">Doces presenteáveis</p>
+  <p class="meta">Encomendas de 09/11 a 06/12/2026 · (14) 99704-8117</p>
+  <div class="notice" id="notice" role="status"></div>
+</header>
+
+<nav class="tabs" aria-label="Categorias de doces">
+  <div class="wrap" role="tablist" id="tabs"></div>
+</nav>
+
+<main class="wrap" id="catalog"></main>
+
+<footer>
+  Querido Brownie · @querido.browniee<br>
+  A taxa de entrega varia conforme a região e é confirmada no WhatsApp.
+</footer>
+
+<div class="bar" id="bar">
+  <div class="wrap">
+    <span id="bar-txt"></span>
+    <button class="btn" id="bar-btn" type="button">Ver carrinho</button>
+  </div>
+</div>
+
+<div class="overlay" id="overlay">
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title">
+    <button class="close" id="close" type="button" aria-label="Fechar carrinho">×</button>
+    <h2 id="sheet-title" tabindex="-1">Seu carrinho</h2>
+
+    <p class="empty" id="cart-empty">Seu carrinho está vazio. Escolha seus doces no cardápio.</p>
+    <div id="cart-lines"></div>
+
+    <div class="totals" id="totals-box" hidden>
+      <span>Total dos doces</span>
+      <strong id="total">R$ 0,00</strong>
+    </div>
+
+    <h3 class="sec-title">Seus dados</h3>
+
+    <label class="lbl" for="f-nome">Nome</label>
+    <input type="text" id="f-nome" autocomplete="name" maxlength="80" placeholder="Seu nome completo">
+
+    <span class="lbl" id="lbl-tipo">Como você quer receber?</span>
+    <div class="choice" role="radiogroup" aria-labelledby="lbl-tipo">
+      <label class="pick"><input type="radio" name="tipo" value="retirada"><span>Retirada<small>Jd. Cavalari</small></span></label>
+      <label class="pick"><input type="radio" name="tipo" value="entrega"><span>Entrega<small>taxa a confirmar</small></span></label>
+    </div>
+
+    <div id="box-end" hidden>
+      <label class="lbl" for="f-end">Endereço de entrega</label>
+      <textarea id="f-end" rows="2" autocomplete="street-address" placeholder="Rua, número, bairro, complemento e ponto de referência"></textarea>
+    </div>
+
+    <label class="lbl" for="f-data">Data desejada</label>
+    <input type="date" id="f-data">
+    <p class="help" id="data-help"></p>
+
+    <label class="lbl" for="f-obs">Observações (opcional)</label>
+    <textarea id="f-obs" rows="2" placeholder="Ex.: é para presente, alguma restrição alimentar..."></textarea>
+
+    <div class="error" id="err" role="alert"></div>
+
+    <button class="btn confirm" id="btn-confirm" type="button">Confirmar encomenda</button>
+    <p class="fine">Você será direcionado ao WhatsApp para confirmar a encomenda com a gente.</p>
+  </div>
+</div>
+
+<script>
+/* ===== CONFIGURAÇÃO (ajuste aqui se datas ou horários mudarem) ===== */
+const CONFIG = {
+  whatsapp: '5514997048117',
+  orderOpen:  new Date(2026, 10, 9),              // 09/11/2026 (mês começa em 0)
+  orderClose: new Date(2026, 11, 6, 23, 59, 59),  // 06/12/2026, inclusive
+  minDays: 3,
+  pickupLocal: 'Jd. Cavalari',
+  // dia da semana (0=dom ... 6=sáb) -> horário da retirada
+  pickupDays: { 2: '18h30 às 19h30', 4: '18h30 às 19h30', 5: '18h30 às 19h30', 6: '14h às 17h' }
+};
+
+const GROUPS = [
+  { id: 'brownetone', label: 'Mini Brownetone', desc: 'Brownie no formato de panetone · aprox. 200 g · escolha o sabor' },
+  { id: 'donuts',     label: 'Mini Donuts',     desc: 'Caixa com 9 mini donuts decorados para o Natal' },
+  { id: 'latas',      label: 'Mini Brownies',   desc: 'Lata com 6 mini brownies cobertos com chocolate' }
+];
+
+/* Produtos. "featured" = card grande com galeria. "variants" = escolha de tipo dentro do produto. */
+const PRODUCTS = [
+  { id: 'bt-brigadeiro', group: 'brownetone', name: 'Brigadeiro Tradicional', desc: 'Brownie no formato de panetone · aprox. 200 g', price: 40,
+    images: [{ src: 'img/brownetone-brigadeiro.jpg', label: 'Brigadeiro Tradicional' }] },
+  { id: 'bt-nutella', group: 'brownetone', name: 'Ninho com Nutella', desc: 'Brownie no formato de panetone · aprox. 200 g', price: 40,
+    images: [{ src: 'img/brownetone-nutella.jpg', label: 'Ninho com Nutella' }] },
+  { id: 'bt-ninho-brigadeiro', group: 'brownetone', name: 'Ninho e Brigadeiro', desc: 'Brownie no formato de panetone · aprox. 200 g', price: 40,
+    images: [{ src: 'img/brownetone-ninho-brigadeiro.jpg', label: 'Ninho e Brigadeiro' }] },
+  { id: 'bt-oreo', group: 'brownetone', name: 'Oreo', desc: 'Brownie no formato de panetone · aprox. 200 g', price: 40,
+    images: [{ src: 'img/brownetone-oreo.jpg', label: 'Oreo' }] },
+
+  { id: 'dn-caixa', group: 'donuts', featured: true, name: 'Caixa com 9 mini donuts',
+    desc: '9 mini donuts decorados com cobertura e enfeites natalinos. Pensados para presentear.', price: 35,
+    images: [{ src: 'img/donuts-1.jpg', label: 'Caixa' }, { src: 'img/donuts-2.jpg', label: 'Detalhe' }] },
+
+  { id: 'lata', group: 'latas', featured: true, name: 'Lata de mini brownies',
+    desc: '6 mini brownies cobertos com chocolate ao leite ou branco. Escolha o tipo e a quantidade.', price: 35,
+    images: [{ src: 'img/lata-fechada.jpg', label: 'Lata fechada' }, { src: 'img/lata-aberta.jpg', label: 'Lata aberta' }],
+    variants: [
+      { id: 'lt-leite', label: '6 ao leite' },
+      { id: 'lt-branco', label: '6 branco' },
+      { id: 'lt-misto', label: '3 ao leite + 3 branco' }
+    ] }
+];
+
+/* Itens que realmente entram no carrinho (cada variante vira um item) */
+const ITEMS = {};
+PRODUCTS.forEach(p => {
+  if (p.variants) {
+    p.variants.forEach(v => { ITEMS[v.id] = { id: v.id, group: p.group, name: `${p.name} · ${v.label}`, price: p.price, img: p.images[0].src }; });
+  } else {
+    ITEMS[p.id] = { id: p.id, group: p.group, name: p.name, price: p.price, img: p.images[0].src };
+  }
+});
+const PRODUCT_BY_ID = Object.fromEntries(PRODUCTS.map(p => [p.id, p]));
+const selected = {};                       // variante escolhida em cada produto com variantes
+PRODUCTS.filter(p => p.variants).forEach(p => { selected[p.id] = p.variants[0].id; });
+const currentId = (p) => (p.variants ? selected[p.id] : p.id);
+
+const KEY = 'querido-brownie-natal-2026-carrinho';
+let cart = loadCart();
+let activeGroup = GROUPS[0].id;
+
+/* ===== UTILIDADES ===== */
+const $ = (id) => document.getElementById(id);
+const money = (v) => v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+const groupLabel = (id) => GROUPS.find(g => g.id === id).label;
+const count = () => Object.values(cart).reduce((a, b) => a + b, 0);
+const total = () => Object.entries(cart).reduce((a, [k, q]) => a + ITEMS[k].price * q, 0);
+
+function parseISO(s) { const [y, m, d] = s.split('-').map(Number); return new Date(y, m - 1, d); }
+function toISO(d) {
+  return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+}
+function fmtBR(d) {
+  return String(d.getDate()).padStart(2, '0') + '/' + String(d.getMonth() + 1).padStart(2, '0') + '/' + d.getFullYear();
+}
+// Data mínima: hoje + 3 dias (horário local da cliente, sem UTC)
+function minDelivery() {
+  const d = new Date();
+  d.setHours(0, 0, 0, 0);
+  d.setDate(d.getDate() + CONFIG.minDays);
+  return d;
+}
+function orderStatus() {
+  const now = new Date();
+  if (now < CONFIG.orderOpen) return 'before';
+  if (now > CONFIG.orderClose) return 'after';
+  return 'open';
+}
+
+/* ===== CARRINHO (salvo só neste aparelho) ===== */
+function loadCart() {
+  try {
+    const raw = JSON.parse(localStorage.getItem(KEY) || '{}');
+    const clean = {};
+    for (const [k, v] of Object.entries(raw)) {
+      if (ITEMS[k] && v > 0) clean[k] = Math.min(99, Math.floor(v));
+    }
+    return clean;
+  } catch (e) { return {}; }
+}
+function saveCart() {
+  try { localStorage.setItem(KEY, JSON.stringify(cart)); } catch (e) { /* navegador sem armazenamento */ }
+}
+function setQty(id, q) {
+  q = Math.max(0, Math.min(99, q));
+  if (q === 0) delete cart[id]; else cart[id] = q;
+  saveCart();
+  refresh();
+}
+
+/* ===== RENDER DO CARDÁPIO ===== */
+function simpleCardHTML(p) {
+  const id = p.id;
+  return `
+    <article class="card" data-card="${id}">
+      <div class="thumb"><img src="${p.images[0].src}" alt="${p.name}" loading="lazy"></div>
+      <div class="info">
+        <h3>${p.name}</h3>
+        <p>${p.desc}</p>
+        <div class="buy">
+          <span class="price">${money(p.price)}</span>
+          <div class="stepper">
+            <button type="button" data-act="dec" data-id="${id}" aria-label="Diminuir ${p.name}">−</button>
+            <span class="qty" data-qty="${id}" aria-live="polite">0</span>
+            <button type="button" data-act="inc" data-id="${id}" aria-label="Aumentar ${p.name}">+</button>
+          </div>
+        </div>
+      </div>
+    </article>`;
+}
+
+function featuredHTML(p) {
+  const thumbs = p.images.length > 1 ? `
+    <div class="thumbs">
+      ${p.images.map((im, i) => `
+        <button type="button" data-gthumb="${p.id}" data-i="${i}" aria-pressed="${i === 0}" aria-label="Ver foto: ${im.label}">
+          <img src="${im.src}" alt="${im.label}">
+        </button>`).join('')}
+    </div>` : '';
+  const opts = p.variants ? `
+    <fieldset>
+      <legend class="lbl">Escolha o tipo da lata</legend>
+      ${p.variants.map((v, i) => `
+        <label class="opt">
+          <input type="radio" name="var-${p.id}" value="${v.id}" data-pid="${p.id}" ${i === 0 ? 'checked' : ''}>
+          <span><i></i>${v.label}<em data-ocount="${v.id}"></em></span>
+        </label>`).join('')}
+    </fieldset>` : '';
+  return `
+    <article class="feat" data-feat="${p.id}">
+      <div class="gal">
+        <div class="main"><img data-gmain="${p.id}" src="${p.images[0].src}" alt="${p.images[0].label}"></div>
+        ${thumbs}
+      </div>
+      <div class="finfo">
+        <h3>${p.name}</h3>
+        <p class="fdesc">${p.desc}</p>
+        <p class="fprice">${money(p.price)} <span>${p.variants ? 'cada lata' : 'cada caixa'}</span></p>
+        ${opts}
+        <div class="buy-row">
+          <span class="qlbl">Quantidade</span>
+          <div class="stepper big">
+            <button type="button" data-act="dec" data-id="${currentId(p)}" data-featbtn="${p.id}" aria-label="Diminuir">−</button>
+            <span class="qty" data-qty-feat="${p.id}" aria-live="polite">0</span>
+            <button type="button" data-act="inc" data-id="${currentId(p)}" data-featbtn="${p.id}" aria-label="Aumentar">+</button>
+          </div>
+        </div>
+      </div>
+    </article>`;
+}
+
+function renderCatalog() {
+  const tabs = $('tabs');
+  const main = $('catalog');
+  tabs.innerHTML = '';
+  main.innerHTML = '';
+  GROUPS.forEach(g => {
+    const b = document.createElement('button');
+    b.className = 'tab';
+    b.type = 'button';
+    b.setAttribute('role', 'tab');
+    b.dataset.group = g.id;
+    b.textContent = g.label;
+    tabs.appendChild(b);
+
+    const products = PRODUCTS.filter(p => p.group === g.id);
+    const sec = document.createElement('section');
+    sec.id = 'sec-' + g.id;
+    sec.hidden = g.id !== activeGroup;
+    sec.setAttribute('role', 'tabpanel');
+    sec.innerHTML = `<div class="sec-head"><h2>${g.label}</h2><p>${g.desc}</p></div>`;
+    products.filter(p => p.featured).forEach(p => sec.insertAdjacentHTML('beforeend', featuredHTML(p)));
+    const simple = products.filter(p => !p.featured);
+    if (simple.length) {
+      sec.insertAdjacentHTML('beforeend', `<div class="grid">${simple.map(simpleCardHTML).join('')}</div>`);
+    }
+    main.appendChild(sec);
+  });
+  tabs.querySelectorAll('.tab').forEach(t => t.setAttribute('aria-selected', t.dataset.group === activeGroup));
+}
+
+function renderCart() {
+  const keys = Object.keys(cart);
+  $('cart-empty').hidden = keys.length > 0;
+  $('totals-box').hidden = keys.length === 0;
+  $('total').textContent = money(total());
+  $('cart-lines').innerHTML = keys.map(id => {
+    const it = ITEMS[id], q = cart[id];
+    return `
+      <div class="line">
+        <img src="${it.img}" alt="">
+        <div class="lm">
+          <div class="nm">${it.name}</div>
+          <div class="sb">${groupLabel(it.group)} · ${money(it.price * q)}</div>
+        </div>
+        <div class="ctl">
+          <div class="stepper">
+            <button type="button" data-act="dec" data-id="${id}" aria-label="Diminuir ${it.name}">−</button>
+            <span class="qty">${q}</span>
+            <button type="button" data-act="inc" data-id="${id}" aria-label="Aumentar ${it.name}">+</button>
+          </div>
+          <button type="button" class="rm" data-act="rm" data-id="${id}">remover</button>
+        </div>
+      </div>`;
+  }).join('');
+}
+
+function refresh() {
+  // cards simples
+  document.querySelectorAll('[data-qty]').forEach(s => { s.textContent = cart[s.dataset.qty] || 0; });
+  document.querySelectorAll('[data-card]').forEach(c => c.classList.toggle('on', (cart[c.dataset.card] || 0) > 0));
+  // cards em destaque (usam a variante escolhida)
+  document.querySelectorAll('[data-featbtn]').forEach(b => {
+    const p = PRODUCT_BY_ID[b.dataset.featbtn];
+    const id = currentId(p);
+    b.dataset.id = id;
+    b.setAttribute('aria-label', (b.dataset.act === 'inc' ? 'Aumentar ' : 'Diminuir ') + ITEMS[id].name);
+  });
+  document.querySelectorAll('[data-qty-feat]').forEach(s => {
+    const p = PRODUCT_BY_ID[s.dataset.qtyFeat];
+    s.textContent = cart[currentId(p)] || 0;
+  });
+  // quantas latas de cada tipo já estão no carrinho
+  document.querySelectorAll('[data-ocount]').forEach(e => {
+    const q = cart[e.dataset.ocount] || 0;
+    e.textContent = q ? `${q} no carrinho` : '';
+  });
+  const n = count();
+  $('bar').classList.toggle('show', n > 0);
+  $('bar-txt').textContent = `${n} ${n === 1 ? 'item' : 'itens'} · ${money(total())}`;
+  if ($('overlay').classList.contains('show')) renderCart();
+  updateStatus();
+}
+
+function updateStatus() {
+  const st = orderStatus();
+  const notice = $('notice');
+  const btn = $('btn-confirm');
+  if (st === 'open') {
+    notice.textContent = 'Encomendas abertas · monte seu pedido';
+    btn.disabled = false;
+    btn.textContent = 'Confirmar encomenda';
+  } else if (st === 'before') {
+    notice.textContent = 'Encomendas abrem em 09/11 · já pode escolher seus doces';
+    btn.disabled = true;
+    btn.textContent = 'Encomendas abrem em 09/11';
+  } else {
+    notice.textContent = 'Encomendas deste Natal encerradas';
+    btn.disabled = true;
+    btn.textContent = 'Encomendas encerradas';
+  }
+}
+
+/* ===== FORMULÁRIO ===== */
+function tipoVal() {
+  const r = document.querySelector('input[name="tipo"]:checked');
+  return r ? r.value : null;
+}
+function updateTipo() {
+  $('box-end').hidden = tipoVal() !== 'entrega';
+  updateDataHelp();
+}
+function updateDataHelp() {
+  const help = $('data-help');
+  const tipo = tipoVal();
+  const dataVal = $('f-data').value;
+  help.classList.remove('warn');
+  let msg = `Pedidos com no mínimo ${CONFIG.minDays} dias de antecedência: a partir de ${fmtBR(minDelivery())}.`;
+  if (dataVal) {
+    const dt = parseISO(dataVal);
+    if (tipo === 'retirada') {
+      const slot = CONFIG.pickupDays[dt.getDay()];
+      if (slot) {
+        msg += ` Horário da retirada: ${slot}.`;
+      } else {
+        help.classList.add('warn');
+        msg = 'As retiradas são às terças, quintas, sextas e sábados. Escolha outra data.';
+      }
+    }
+  } else if (tipo === 'retirada') {
+    msg += ' Retiradas: terças, quintas, sextas e sábados.';
+  }
+  help.textContent = msg;
+}
+
+function validate() {
+  const st = orderStatus();
+  if (st === 'before') return 'As encomendas abrem em 09/11. Volte nesse dia para confirmar seu pedido.';
+  if (st === 'after') return 'As encomendas deste Natal já foram encerradas.';
+  if (!count()) return 'Adicione pelo menos um item ao carrinho.';
+  const nome = $('f-nome').value.trim();
+  const tipo = tipoVal();
+  const end = $('f-end').value.trim();
+  const dataVal = $('f-data').value;
+  if (!nome) return 'Informe seu nome.';
+  if (!tipo) return 'Escolha se você quer retirada ou entrega.';
+  if (tipo === 'entrega' && !end) return 'Informe o endereço de entrega.';
+  if (!dataVal) return 'Escolha a data desejada.';
+  const dt = parseISO(dataVal);
+  if (dt < minDelivery()) return `A data precisa ser no mínimo ${CONFIG.minDays} dias após hoje (a partir de ${fmtBR(minDelivery())}).`;
+  if (tipo === 'retirada' && !CONFIG.pickupDays[dt.getDay()]) return 'As retiradas são às terças, quintas, sextas e sábados.';
+  return null;
+}
+
+function buildMessage() {
+  const tipo = tipoVal();
+  const d = parseISO($('f-data').value);
+  const lines = ['Olá! Quero confirmar minha encomenda do Especial de Natal 🎄', '', '*Itens:*'];
+  Object.keys(cart).forEach(id => {
+    const it = ITEMS[id], q = cart[id];
+    lines.push(`• ${q}x ${it.name} (${groupLabel(it.group)}) — ${money(it.price * q)}`);
+  });
+  lines.push('', `*Total dos doces:* ${money(total())}`);
+  if (tipo === 'entrega') lines.push('*Taxa de entrega:* a confirmar');
+  lines.push('', `*Nome:* ${$('f-nome').value.trim()}`);
+  lines.push(tipo === 'entrega' ? '*Tipo:* Entrega' : `*Tipo:* Retirada no ${CONFIG.pickupLocal}`);
+  if (tipo === 'entrega') lines.push(`*Endereço:* ${$('f-end').value.trim()}`);
+  lines.push(`*Data:* ${fmtBR(d)}`);
+  if (tipo === 'retirada') lines.push(`*Horário:* ${CONFIG.pickupDays[d.getDay()]}`);
+  const obs = $('f-obs').value.trim();
+  if (obs) lines.push(`*Observações:* ${obs}`);
+  return lines.join('\n');
+}
+
+/* ===== CARRINHO (abrir / fechar) ===== */
+function openSheet() {
+  renderCart();
+  updateDataHelp();
+  $('overlay').classList.add('show');
+  document.body.style.overflow = 'hidden';
+  setTimeout(() => $('sheet-title').focus({ preventScroll: true }), 0);
+}
+function closeSheet() {
+  $('overlay').classList.remove('show');
+  document.body.style.overflow = '';
+}
+
+/* ===== EVENTOS ===== */
+document.addEventListener('click', (e) => {
+  const act = e.target.closest('[data-act]');
+  if (act) {
+    const id = act.dataset.id;
+    const q = cart[id] || 0;
+    if (act.dataset.act === 'inc') setQty(id, q + 1);
+    if (act.dataset.act === 'dec') setQty(id, q - 1);
+    if (act.dataset.act === 'rm') setQty(id, 0);
+    return;
+  }
+  const thumb = e.target.closest('[data-gthumb]');
+  if (thumb) {
+    const p = PRODUCT_BY_ID[thumb.dataset.gthumb];
+    const i = Number(thumb.dataset.i);
+    const main = document.querySelector(`[data-gmain="${p.id}"]`);
+    main.src = p.images[i].src;
+    main.alt = p.images[i].label;
+    document.querySelectorAll(`[data-gthumb="${p.id}"]`).forEach(b => b.setAttribute('aria-pressed', Number(b.dataset.i) === i));
+    return;
+  }
+  const tab = e.target.closest('.tab');
+  if (tab) {
+    activeGroup = tab.dataset.group;
+    document.querySelectorAll('.tab').forEach(t => t.setAttribute('aria-selected', t.dataset.group === activeGroup));
+    GROUPS.forEach(g => { $('sec-' + g.id).hidden = g.id !== activeGroup; });
+    window.scrollTo({ top: $('catalog').offsetTop - 70, behavior: 'smooth' });
+  }
+});
+
+// troca de tipo da lata (radio)
+document.addEventListener('change', (e) => {
+  if (e.target.matches('input[data-pid]')) {
+    selected[e.target.dataset.pid] = e.target.value;
+    refresh();
+  }
+});
+
+document.querySelectorAll('input[name="tipo"]').forEach(r => r.addEventListener('change', updateTipo));
+$('f-data').addEventListener('change', updateDataHelp);
+$('bar-btn').addEventListener('click', openSheet);
+$('close').addEventListener('click', closeSheet);
+$('overlay').addEventListener('click', (e) => { if (e.target === $('overlay')) closeSheet(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeSheet(); });
+
+$('btn-confirm').addEventListener('click', () => {
+  const err = $('err');
+  const msg = validate();
+  if (msg) {
+    err.textContent = msg;
+    err.classList.add('show');
+    err.scrollIntoView({ block: 'center', behavior: 'smooth' });
+    return;
+  }
+  err.classList.remove('show');
+  const url = 'https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent(buildMessage());
+  window.open(url, '_blank', 'noopener');
+});
+
+/* ===== INÍCIO ===== */
+renderCatalog();
+$('f-data').min = toISO(minDelivery());
+refresh();
+</script>
+</body>
+</html>
